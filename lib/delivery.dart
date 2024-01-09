@@ -16,8 +16,10 @@ class Delivery extends StatefulWidget {
 class _DeliveryState extends State<Delivery> {
   final TextEditingController _controllerID1 = TextEditingController();
   final TextEditingController _controllerID2 = TextEditingController();
+  final TextEditingController _controllerID3 = TextEditingController();
   String _name = '';
   String _address = '';
+  String _number = '';
   int did = 1;
   String ditems = '';
 
@@ -25,6 +27,7 @@ class _DeliveryState extends State<Delivery> {
   void dispose() {
     _controllerID1.dispose();
     _controllerID2.dispose();
+    _controllerID3.dispose();
     super.dispose();
   }
 
@@ -37,6 +40,12 @@ class _DeliveryState extends State<Delivery> {
   void update2(String text) {
     setState(() {
       _address = text;
+    });
+  }
+
+  void update3(String text) {
+    setState(() {
+      _number = text;
     });
   }
 
@@ -92,6 +101,21 @@ class _DeliveryState extends State<Delivery> {
                   filled: true,
                   fillColor: Colors.white,
                   labelText: 'Enter your name',
+                  border: OutlineInputBorder(),
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 50,
+            ),
+            SizedBox(
+              width: width * 0.5,
+              child: TextField(
+                controller: _controllerID3,
+                decoration: const InputDecoration(
+                  filled: true,
+                  fillColor: Colors.white,
+                  labelText: 'Enter your number',
                   border: OutlineInputBorder(),
                 ),
               ),

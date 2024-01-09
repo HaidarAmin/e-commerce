@@ -42,6 +42,7 @@ class _ShirtsState extends State<Shirts> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     double totalPrice = 0;
     return Scaffold(
         backgroundColor: const Color(0xFF3D4042),
@@ -65,6 +66,14 @@ class _ShirtsState extends State<Shirts> {
                           padding: const EdgeInsets.all(5),
                           width: width * 0.9,
                           child: Row(children: [
+                            SizedBox(
+                              height: height * 0.25,
+                              width: width * 0.25,
+                              child: FadeInImage.assetNetwork(
+                                  placeholder: 'assets/loading.gif',
+                                  image:
+                                  'https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2xvdGhpbmclMjBzdG9yZXxlbnwwfHwwfHx8MA%3D%3D'),
+                            ),
                             SizedBox(width: width * 0.15),
                             Flexible(
                                 child: Text(_shirts[index].toString(),
