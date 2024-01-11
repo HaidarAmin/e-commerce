@@ -10,19 +10,22 @@ class Checkout extends StatefulWidget {
 }
 
 class _CheckoutState extends State<Checkout> {
+  double _totalprice = 0;
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
+    for(var i=0; i < cartItems.length;i++){
+      _totalprice+=cartItems[i].price ;
+    }
     return Scaffold(
       backgroundColor: const Color(0xFF3D4042),
       appBar: AppBar(
         iconTheme: const IconThemeData(
           color: Colors.white,
         ),
-        title: const Text(
-          'Cart items',
-          style: TextStyle(color: Colors.white),
+        title: Text('Total: $_totalprice\$',
+          style: const TextStyle(color: Colors.white),
         ),
         centerTitle: true,
         backgroundColor: const Color(0xFFDD5638),
@@ -32,6 +35,7 @@ class _CheckoutState extends State<Checkout> {
               onPressed: () {
                 setState(() {
                   cartItems = [];
+                  _totalprice=0;
                 });
               },
               icon: const Icon(Icons.refresh)),

@@ -17,6 +17,7 @@ class Item {
   String toString() {
     return 'ItemID: $_itemid\nName: $_name\nInStock: $_instock\n Price: \$$_price\nCategory: $_category';
   }
+  double get price => _price;
 }
 
 List<Item> _items = [];
