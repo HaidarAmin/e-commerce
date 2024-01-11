@@ -95,7 +95,7 @@ class _DeliveryState extends State<Delivery> {
             ),
             SizedBox(
               width: width * 0.5,
-              child: TextField(
+              child: TextFormField(
                 controller: _controllerID1,
                 decoration: const InputDecoration(
                   filled: true,
@@ -103,6 +103,12 @@ class _DeliveryState extends State<Delivery> {
                   labelText: 'Enter your name',
                   border: OutlineInputBorder(),
                 ),
+                validator: (String? value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter name';
+                  }
+                  return null;
+                },
               ),
             ),
             const SizedBox(
@@ -110,7 +116,7 @@ class _DeliveryState extends State<Delivery> {
             ),
             SizedBox(
               width: width * 0.5,
-              child: TextField(
+              child: TextFormField(
                 controller: _controllerID3,
                 decoration: const InputDecoration(
                   filled: true,
@@ -118,6 +124,12 @@ class _DeliveryState extends State<Delivery> {
                   labelText: 'Enter your number',
                   border: OutlineInputBorder(),
                 ),
+                validator: (String? value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter number';
+                  }
+                  return null;
+                },
               ),
             ),
             const SizedBox(
@@ -125,7 +137,7 @@ class _DeliveryState extends State<Delivery> {
             ),
             SizedBox(
               width: width * 0.5,
-              child: TextField(
+              child: TextFormField(
                 controller: _controllerID2,
                 decoration: const InputDecoration(
                   filled: true,
@@ -133,6 +145,12 @@ class _DeliveryState extends State<Delivery> {
                   labelText: 'Enter your address(city,street,building)',
                   border: OutlineInputBorder(),
                 ),
+                validator: (String? value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter address';
+                  }
+                  return null;
+                },
               ),
             ),
             const SizedBox(
